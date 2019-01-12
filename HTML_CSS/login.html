@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login using local storge</title>
+		<style>
+		#btn {
+  box-size:10px;
+}
+			#div1{
+			width:500px;
+			height:400px;
+			float:right;
+			border:1px dotted black;
+			background-color:cyan;
+			}
+			#div2{
+			width:500px;
+			height:400px;
+			float:left;
+			border:1px dotted black;
+			background-color:cyan;
+			}
+			body{
+			background-image: url("background.jpg");
+			}
+			#main{
+			margin:40px;
+			}
+			
+		</style>
+
+    </head>
+	<header align="center" style="font-size:50px">Welcome to our Video Portal</header>
+    <body>
+	<div id="main">
+		<div id="div1" >
+		<h1 align="center">SIGNUP</h1><br>
+			<form id="signup"> 
+				Name:<input id="username" type="text" placeholder="username"/>
+				<br>
+				Password:<input id="password" type="password" placeholder="password"/>
+				<br>
+				<input id="btn" type="submit" value="signup" onClick="register()"/> 
+			</form>
+		</div>
+		<div id="div2">
+			<h1 align="center">SIGNIN</h1><br>
+			<form id="signin" action="video.html"> 
+				Username:<input id="username1" type="text" placeholder="username"/><br>
+				Passsword:<input id="password1" type="password" placeholder="password" /><br>
+				<input id="btn" type="submit" value="signin" onClick="verify()"/> 
+		   </form>
+		</div>
+	</div>
+	
+	<footer align="center" style="padding-top:420px">
+    <hr>
+	<p>&copy;2019 Spring AU,Accolite</p>
+	</footer>
+    
+    </body>
+	<script type="text/javascript" language="javascript" src="login.js"></script>
+</html>
