@@ -36,12 +36,12 @@ public class Main {
 				
 			for(int k=0;k<p;k++) {
 		         //sort based on age
-				Collections.sort(c[k].E,new MySalaryComp());
+				Collections.sort(c[k].E,new SalaryCompare());
 				for(Employee e:c[k].E){
 		            System.out.println(e.toString());
 				}
 				 //sort based on names
-		         Collections.sort(c[k].E, new Sortbyname());
+		         Collections.sort(c[k].E, new NameSort());
 		         for(Employee w:c[k].E){
 			            System.out.println(w.toString());
 		         }
