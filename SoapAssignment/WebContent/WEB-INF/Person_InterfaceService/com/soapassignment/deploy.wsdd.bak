@@ -1,0 +1,42 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Person_InterfaceService WSDL service -->
+
+  <service name="Person_Interface" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soapassignment.com"/>
+      <parameter name="wsdlServiceElement" value="Person_InterfaceService"/>
+      <parameter name="schemaQualified" value="http://soapassignment.com"/>
+      <parameter name="wsdlServicePort" value="Person_Interface"/>
+      <parameter name="className" value="com.soapassignment.Person_InterfaceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Person_Interface"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="deletePerson" qname="operNS:deletePerson" xmlns:operNS="http://soapassignment.com" returnQName="retNS:deletePersonReturn" xmlns:retNS="http://soapassignment.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://soapassignment.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getPersons" qname="operNS:getPersons" xmlns:operNS="http://soapassignment.com" returnQName="retNS:getPersonsReturn" xmlns:retNS="http://soapassignment.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:k" xmlns:pns="http://soapassignment.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="addPerson" qname="operNS:addPerson" xmlns:operNS="http://soapassignment.com" returnQName="retNS:addPersonReturn" xmlns:retNS="http://soapassignment.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://soapassignment.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:id" xmlns:pns="http://soapassignment.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:age" xmlns:pns="http://soapassignment.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="updatePerson" qname="operNS:updatePerson" xmlns:operNS="http://soapassignment.com" returnQName="retNS:updatePersonReturn" xmlns:retNS="http://soapassignment.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://soapassignment.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:name" xmlns:pns="http://soapassignment.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:age" xmlns:pns="http://soapassignment.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="deletePerson getPersons addPerson updatePerson"/>
+
+  </service>
+</deployment>
