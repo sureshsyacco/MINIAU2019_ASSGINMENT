@@ -11,9 +11,9 @@ public class Person_implementation{
 	static HashMap<Integer, Person> persons = new HashMap<>();
 		
 		public Person_implementation() {
-			persons.put(1, new Person("foo", 25, 1));
-			persons.put(2, new Person("bar", 47, 2));
-			persons.put(3, new Person("alex", 32, 3));
+			persons.put(1, new Person("ram", 25, 1));
+			persons.put(2, new Person("ramya", 47, 2));
+			persons.put(3, new Person("raman", 32, 3));
 		}
 		
 //		show all
