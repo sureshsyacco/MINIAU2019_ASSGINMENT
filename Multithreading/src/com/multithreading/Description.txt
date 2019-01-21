@@ -1,0 +1,9 @@
+I am java beginner,coding in java is bit difficult for me.
+Description.
+Created 5 classess.
+taxi_stand is a main class which create  2 threads,one for 
+creating passengers another one is for creating taxi.
+used linked list to maintain passanger and taxi queues.
+
+taxi stand has 4 slots.
+for every 5 seconds im adding passengers.
