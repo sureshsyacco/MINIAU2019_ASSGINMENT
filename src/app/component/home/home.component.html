@@ -1,0 +1,28 @@
+<p class="sectionheader jumbotron">Welcome to Library</p>
+<div>
+  <ul>
+    <li *ngFor="let book of books">{{ book.name }}</li>
+  </ul>
+
+  <div>
+    <label for="bookId">ID:</label>
+    <input type="text" id="bookId" [(ngModel)]="id" />
+  </div>
+  <div>
+    <label for="name">NAME:</label>
+    <input type="text" id="name" [(ngModel)]="name" />
+  </div>
+  <div>
+    <label for="desc">DESCRIPTION:</label>
+    <input type="text" id="desc" [(ngModel)]="description" />
+  </div>
+  <div>
+    <label for="author">Author:</label>
+    <input type="text" id="author" [(ngModel)]="authorName" />
+  </div>
+  <div>
+    <label for="price">Price:</label>
+    <input type="text" id="price" [(ngModel)]="price" />
+  </div>
+  <button type="button" (click)="postData()">Add book</button>
+</div>
